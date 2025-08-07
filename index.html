@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GlowUp Studio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f0f4ff, #e9f2ff);
+      color: #333;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-top: 0.5rem;
+    }
+
+    nav {
+      background: #1abc9c;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #16a085;
+    }
+
+    .hero {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1532153955177-f59af40d6472') no-repeat center/cover;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h2 {
+      position: relative;
+      color: #fff;
+      font-size: 3rem;
+      z-index: 1;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h3 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #2c3e50;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h4 {
+      color: #1abc9c;
+      margin-bottom: 1rem;
+    }
+
+    .card::before {
+      content: "✨";
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      background: #1abc9c;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #16a085;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    .socials {
+      margin-top: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #1abc9c;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>GlowUp Studio</h1>
+    <p>Your brand, your style, your glow.</p>
+  </header>
+
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home" class="hero">
+    <h2>Unleash Your Creative Spark</h2>
+  </section>
+
+  <section id="about" class="section">
+    <h3>About Us</h3>
+    <p style="max-width: 700px; margin: auto; text-align: center;">
+      GlowUp Studio is your creative partner in branding, web design, and storytelling. We help individuals and businesses build their identity and connect with the world.
+    </p>
+  </section>
+
+  <section id="services" class="section">
+    <h3>Our Services</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Brand Identity</h4>
+        <p>Crafting a unique voice, logo, and look that defines your business essence.</p>
+      </div>
+      <div class="card">
+        <h4>Web Design</h4>
+        <p>Custom, mobile-friendly websites that impress and convert your audience.</p>
+      </div>
+      <div class="card">
+        <h4>Content Creation</h4>
+        <p>Engaging blogs, visuals, and social content that reflect your values.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section">
+    <h3>Our Portfolio</h3>
+    <p style="text-align: center;">Coming soon: Our best work for clients in beauty, fashion, startups, and more.</p>
+  </section>
+
+  <section id="contact" class="section">
+    <h3>Contact Us</h3>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="tel" placeholder="Phone Number (optional)">
+      <textarea placeholder="Your Message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p style="text-align: center; margin-top: 1.5rem;">
+      📧 Email: contact@glowupstudio.com <br>
+      📞 Phone: +91-9876543210
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 GlowUp Studio. All rights reserved.</p>
+    <div class="socials">
+      <a href="#">🌐</a>
+      <a href="#">📸</a>
+      <a href="#">🐦</a>
+    </div>
+  </footer>
+
+</body>
+</html>
